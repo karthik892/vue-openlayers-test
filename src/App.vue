@@ -20,15 +20,33 @@
       </vl-layer-tile>
     </vl-map>
     <div id="sidebar">
-      Zoom: {{ zoom }}<br>
-      Center: {{ center }}<br>
-      Rotation: {{ rotation }}<br>
-      My geolocation: {{ geolocPosition }}
+      <mdb-container>
+        <mdb-row>
+          <mdb-col sm="12">
+            <mdb-card dark>
+              <mdb-card-body color="elegant" class="white-text">
+                <a class="activator mr-4"></a>
+                <mdb-card-title>Map Info</mdb-card-title>
+                <hr class="hr-light"/>
+                <p class="font-small mb-3">
+                  Zoom: {{ zoom }}<br>
+                  Center: {{ center }}<br>
+                  Rotation: {{ rotation }}<br>
+                  My geolocation: {{ geolocPosition }}
+                </p>
+              </mdb-card-body>
+            </mdb-card>
+          </mdb-col>
+        </mdb-row>
+      </mdb-container>
+      
     </div>
   </div>
 </template>
 
 <script>
+import { mdbContainer, mdbRow, mdbCol, mdbCard, mdbCardImage, mdbCardHeader, mdbCardBody, mdbCardTitle, mdbCardText, mdbCardFooter, mdbCardUp, mdbCardAvatar, mdbCardGroup, mdbBtn, mdbView, mdbMask, mdbIcon } from 'mdbvue';
+	
   export default {
     data () {
       return { 
@@ -38,6 +56,25 @@
         geolocPosition: undefined,
       }
     },
+    components: {
+			mdbContainer,
+			mdbRow,
+			mdbCol,
+			mdbCard,
+			mdbCardImage,
+			mdbCardHeader,
+			mdbCardBody,
+			mdbCardTitle,
+			mdbCardText,
+			mdbCardFooter,
+			mdbCardUp,
+			mdbCardAvatar,
+			mdbCardGroup,
+			mdbBtn,
+			mdbView,
+			mdbMask,
+			mdbIcon
+		}
   }
 </script>
 <style>
